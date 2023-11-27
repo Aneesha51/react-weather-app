@@ -171,7 +171,7 @@ export default function Weather(){
                 </div>
             </div>
             <small>
-                <a href="#">Open-source code</a>
+                <a href="https://github.com/Aneesha51">Open-source code</a>
                 <span>, by </span>
                 <a href="https://www.linkedin.com/in/aneesha-rangan-41b171196">Aneesha Rangan</a>
             </small>
