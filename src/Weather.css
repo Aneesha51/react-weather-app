@@ -1,8 +1,9 @@
 body {
     font-family: 'Montserrat', sans-serif;
-    background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/105/172/original/sapan-patel-i9Q9bc-WgfE-unsplash.jpg?1701121170");
+    background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/105/173/original/sunrise.jpg?1701123938");
     background-size: cover;
     background-repeat: no-repeat;
+   
    
 }
 input[type=text] {
@@ -26,7 +27,7 @@ a {
 
 
 .container{
-   
+   margin-top: 105px;
    width: 100%;
    padding-right: 15px;
    padding-left: 15px;
@@ -99,11 +100,12 @@ a {
 .forecast-day {
     color: #702283;
     font-size: 15px;
-    font-weight: 400;
+    font-weight: 500;
     height: 15px;
     line-height: 15px;
     text-align: center;
     white-space: nowrap;
+    font-weight: 400;
 }
 
 .forecast-icon {
@@ -115,7 +117,7 @@ a {
     color: #702283;
     text-align: center;
     font-size: 15px;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 15px;
 }
 
