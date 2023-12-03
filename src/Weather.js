@@ -1,32 +1,47 @@
-import React from "react";
+import React, {useState} from "react";
 import 'bootstrap/dist/css/bootstrap.css';
+import axios from "axios";
 import ReactAnimatedWeather from 'react-animated-weather';
 import "./Weather.css";
 
 
 export default function Weather(){
-    const Sunny = {
+    const [ready, setReady] = useState(false);
+    const [weatherData, setWeatherData] = useState({});
+    function handleResponse(response){
+        console.log(response.data);
+        setWeatherData({
+            temperature: response.data.main.temp,
+            description: response.data.weather[0].description,
+            icon: response.data.weather[0].icon,
+            humidity: response.data.main.humidity,
+            wind: response.data.wind.speed,
+            city: response.data.name
+        })
+        setReady(true);
+    } 
+    let Sunny = {
         icon: 'CLEAR_DAY',
         color: 'black',
         size: 56,
         animate: true
       };
 
-      const Cloudy = {
+      let Cloudy = {
         icon: 'CLOUDY',
         color: 'black',
         size: 56,
         animate: true
       };
 
-      const Rain = {
+      let Rain = {
         icon: 'RAIN',
         color: 'black',
         size: 56,
         animate: true
       };
 
-      const Wind = {
+      let Wind = {
         icon: 'WIND',
         color: 'black',
         size: 56,
@@ -34,7 +49,8 @@ export default function Weather(){
       };
 
 
-    return(
+    if (ready){
+        return(
         <div className="container">
             <div className="weather-container">
                 <div>
@@ -51,7 +67,7 @@ export default function Weather(){
                             <div>
                                 <div className="clearfix">
                                     <form className="float-left">
-                                        <input type="text" placeholder="Enter a city" autoComplete="off"/>
+                                        <input type="text" placeholder="Enter a city" autoComplete="off" autoFocus="on"/>
                                         <input type="submit" className="btn btn-primary" value="Search"/>
                                         <button className="float-left btn btn-success">Current</button>
                                     </form>
@@ -60,10 +76,10 @@ export default function Weather(){
                                 <div className="weather-summary">
                                     <div className="weather-summary-header"> 
                                     <h1>
-                                        Johannesburg
+                                        {weatherData.city}
                                     </h1>
                                     <div className="weather-detail__text">Sunday 22:58</div>
-                                    <div className="weather-detail__text">Sunny</div>
+                                    <div className="weather-detail__text">{weatherData.description}</div>
                                     </div>
                                     <div className="row">
                                         <div className="col-sm-6">
@@ -77,7 +93,7 @@ export default function Weather(){
                                                 />
                                                 </div>
                                                 <div className="weather-temp weather-temp-today"> 
-                                                14
+                                                {Math.round(weatherData.temperature)}
                                                 </div>
                                                 <div className="weather-unit__text weather-unit__text--today">°C</div>
 
@@ -85,10 +101,13 @@ export default function Weather(){
                                         </div>
                                         <div className="col-sm-6">
                                             <div className="weather-detail__text">
-                                                Precipitation: 84%
+                                                Precipitation: %
                                             </div>
                                             <div className="weather-detail__text">
-                                                Wind: 1km/h
+                                                Wind: {Math.round(weatherData.wind)} km/h
+                                            </div>
+                                            <div className="weather-detail__text">
+                                                humidity: {weatherData.humidity}
                                             </div>
                                         </div>
                                     </div>
@@ -177,5 +196,17 @@ export default function Weather(){
             </small>
         </div>
         
-    )
+    );
+    } else {
+         
+    const apiKey = "c6f8ef4575250284954db9f4dfa7a996";
+    let city = "London";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+
+    return(
+        "Loading..."
+    );
+    }
+    
 }
