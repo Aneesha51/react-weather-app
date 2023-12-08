@@ -7,6 +7,7 @@ body {
    
 }
 input[type=text] {
+    display: inline;
     border-radius: 2px;
     border: none;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.25), 0 0 0 1px rgba(0,0,0,.20);
@@ -26,32 +27,15 @@ a {
 }
 
 
-.container{
-   margin-top: 105px;
-   width: 100%;
-   padding-right: 15px;
-   padding-left: 15px;
-   margin-right: auto;
-   margin-left: auto;
-    
-}
-
 .weather-container{
     background-color: rgba(255, 255, 255, 0.2);
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.16), 0 0 0 1px rgba(0,0,0,.08);
+    border-radius: 4px;
     margin: 20px 0;
     max-width: 630px;
     padding: 20px 16px 24px;
 }
 
-.navigation-items{
-    display: inline;
-    list-style: none;
-    margin: 0 20px 0 0;
-    padding: 0 0 20px;
-    
-    
-}
 
 .btn {
     border-radius: 5px;
@@ -122,14 +106,18 @@ a {
 }
 
 .btn-primary{
+    margin-left: 55px;
+    margin-top: 17px;
     color: black;
     font-weight: 500;
     background-color: #702283;
     border-color: #702283;
     box-shadow: 11px 11px 42px -10px rgba(0,0,0,0.45);
+    display: inline;
 }
 
 .btn-success{
+    margin-top: 17px;
     color: black;
     font-weight: 500;
     background-color: #702283;

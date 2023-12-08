@@ -5,7 +5,7 @@ import ReactAnimatedWeather from 'react-animated-weather';
 import "./Weather.css";
 
 
-export default function Weather(){
+export default function Weather(props){
     const [ready, setReady] = useState(false);
     const [weatherData, setWeatherData] = useState({});
     function handleResponse(response){
@@ -51,35 +51,35 @@ export default function Weather(){
 
     if (ready){
         return(
-        <div className="container">
+       
             <div className="weather-container">
-                <div>
-                    <header>
-                        <ul className="navigation-items">
-                            <li className="navigation-items"> <a href="/spain">Spain</a></li>
-                            <li className="navigation-items"> <a href="/france">France</a></li>
-                            <li className="navigation-items"> <a href="/india">India</a></li>
-                            <li className="navigation-items"> <a href="/South Africa">South Africa</a></li>
-                        </ul>
-                    </header>
                     <div>
                         <div className="App">
                             <div>
                                 <div className="clearfix">
                                     <form className="float-left">
+                                        <div className="row form">
+                                            <div className="col-6">
                                         <input type="text" placeholder="Enter a city" autoComplete="off" autoFocus="on"/>
+                                        </div>
+                                        <div className="col-3">
                                         <input type="submit" className="btn btn-primary" value="Search"/>
+                                        </div>
+                                        <div className="col-3">
                                         <button className="float-left btn btn-success">Current</button>
+                                        </div>
+                                        
+                                        </div>
                                     </form>
                                     
-                                </div>
+                                    </div>
                                 <div className="weather-summary">
                                     <div className="weather-summary-header"> 
                                     <h1>
                                         {weatherData.city}
                                     </h1>
                                     <div className="weather-detail__text">Sunday 22:58</div>
-                                    <div className="weather-detail__text">{weatherData.description}</div>
+                                    <div className="text-capitalize weather-detail__text">{weatherData.description}</div>
                                     </div>
                                     <div className="row">
                                         <div className="col-sm-6">
@@ -186,22 +186,16 @@ export default function Weather(){
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    
             </div>
-            <small>
-                <a href="https://github.com/Aneesha51">Open-source code</a>
-                <span>, by </span>
-                <a href="https://www.linkedin.com/in/aneesha-rangan-41b171196">Aneesha Rangan</a>
-            </small>
+           
         </div>
         
     );
     } else {
          
     const apiKey = "c6f8ef4575250284954db9f4dfa7a996";
-    let city = "London";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
 
     return(
