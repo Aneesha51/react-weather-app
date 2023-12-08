@@ -1,5 +1,5 @@
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Hedvig Letters Serif', serif;
     background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/105/173/original/sunrise.jpg?1701123938");
     background-size: cover;
     background-repeat: no-repeat;
@@ -54,10 +54,15 @@ a {
 }
 
 .weather-detail__text {
-    color: #702283;
+   
+    color: #31063C;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 20px;
+}
+
+.weather-info{
+    margin-top: 20px;
 }
 
 .row {
@@ -68,7 +73,6 @@ a {
 }
 
 .weather-icon{
-    margin-top: 13px;
     float: left;
 }
 
@@ -78,13 +82,22 @@ a {
     font-size: 70px;
     font-weight: 400;
     line-height: 1;
+    margin-top: 15px;
     padding-left: 10px;
 }
 
+.weather-unit__text--today{
+    font-weight: 700;
+    margin-top: 15px;
+    font-size: 20px;
+    color: black;
+}
+
 .forecast-day {
-    color: #702283;
+    color: #31063C;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 700;
+    font-family: 'Hedvig Letters Serif', serif;
     height: 15px;
     line-height: 15px;
     text-align: center;
@@ -98,10 +111,10 @@ a {
 }
 
 .forecast-temperature {
-    color: #702283;
+    color: #31063C;
     text-align: center;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 15px;
 }
 
