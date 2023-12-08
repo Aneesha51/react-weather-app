@@ -1,8 +1,10 @@
 import React, {useState} from "react";
+import FormattedDate from "./FormattedDate";
 import 'bootstrap/dist/css/bootstrap.css';
 import axios from "axios";
 import ReactAnimatedWeather from 'react-animated-weather';
 import "./Weather.css";
+
 
 
 export default function Weather(props){
@@ -12,11 +14,13 @@ export default function Weather(props){
         console.log(response.data);
         setWeatherData({
             temperature: response.data.main.temp,
-            description: response.data.weather[0].description,
+            description: response.data.weather[0].description, 
+            date: new Date(response.data.dt *1000),
             icon: response.data.weather[0].icon,
             humidity: response.data.main.humidity,
             wind: response.data.wind.speed,
             city: response.data.name
+           
         })
         setReady(true);
     } 
@@ -78,7 +82,8 @@ export default function Weather(props){
                                     <h1>
                                         {weatherData.city}
                                     </h1>
-                                    <div className="weather-detail__text">Sunday 22:58</div>
+                                    <div className="weather-detail__text"><FormattedDate date={weatherData.date}/>
+                                    </div>
                                     <div className="text-capitalize weather-detail__text">{weatherData.description}</div>
                                     </div>
                                     <div className="row">
