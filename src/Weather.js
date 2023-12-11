@@ -48,15 +48,13 @@ export default function Weather(props){
                                 <div className="clearfix">
                                     <form className="float-left" onSubmit={handleSubmit}>
                                         <div className="row form">
-                                            <div className="col-6">
+                                            <div className="col-9">
                                         <input type="text" placeholder="Enter a city" autoComplete="off" autoFocus="on" onChange={handleCityChange}/>
                                         </div>
                                         <div className="col-3">
                                         <input type="submit" className="btn btn-primary" value="Search"/>
                                         </div>
-                                        <div className="col-3">
-                                        <button className="float-left btn btn-success">Current</button>
-                                        </div>
+                                       
                                         
                                         </div>
                                     </form>
