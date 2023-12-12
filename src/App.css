@@ -5,6 +5,12 @@ a {
     font-weight: 700;
 }
 
+p {
+    font-size: 14px;
+    color: black;
+    font-weight: 600;
+}
+
 .container{
     margin-top: 105px;
     width: 100%;

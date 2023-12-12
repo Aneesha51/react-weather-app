@@ -32,9 +32,6 @@ export default function WeatherInfo(props) {
                                         </div>
                                         <div className="col-sm-6 weather-info">
                                             <div className="weather-detail__text">
-                                                Precipitation: %
-                                            </div>
-                                            <div className="weather-detail__text">
                                                 Wind: {Math.round(props.data.wind)} km/h
                                             </div>
                                             <div className="weather-detail__text">

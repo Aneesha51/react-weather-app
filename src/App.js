@@ -10,9 +10,8 @@ export default function App() {
      <Weather defaultCity="New York"/>
      <footer>
      <small>
-                <a href="https://github.com/Aneesha51">Open-source code</a>
-                <span>, by </span>
-                <a href="https://www.linkedin.com/in/aneesha-rangan-41b171196">Aneesha Rangan</a>
+      <p>This project was by <a href="https://www.linkedin.com/in/aneesha-rangan-41b171196">Aneesha Rangan</a> and is Open-source on <a href="https://github.com/Aneesha51">GitHub</a> and is hosted on  <a href="https://jade-croquembouche-d185e5.netlify.app/">Netlify</a> </p>
+               
             </small>
      </footer>
     </div>
